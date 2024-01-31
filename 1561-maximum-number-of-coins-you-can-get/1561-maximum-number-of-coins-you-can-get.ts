@@ -1,12 +1,9 @@
 function maxCoins(piles: number[]): number {
   let res: number = 0
-    quickSort(piles)
+    const sortedArr = quickSort(piles)
     const len: number = piles.length
-    
     for (let i=0; i<=len/3-1; i++) {
-        piles.shift()
-        piles.pop()
-        res += piles.shift()
+        res += sortedArr[i*2+1]
     }
     return res
 };
